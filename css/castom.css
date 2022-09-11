@@ -1,0 +1,352 @@
+.loader_sec {
+    height: 100vh;
+    width: 100vw;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+    overflow: hidden;
+    display: none;
+}
+
+.box {
+    display: inline-block;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+[class*=loader-] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    color: inherit;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.loader-30 {
+    border: 0.2em solid transparent;
+    border-top-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-radius: 50%;
+    position: relative;
+    -webkit-animation: 1s loader-30 linear infinite;
+    animation: 1s loader-30 linear infinite;
+}
+
+.loader-30:before,
+.loader-30:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: 0.2em solid transparent;
+    border-bottom-color: currentcolor;
+}
+
+.loader-30:before {
+    transform: rotate(135deg);
+    right: -0.3em;
+    top: -0.05em;
+}
+
+.loader-30:after {
+    transform: rotate(-45deg);
+    left: -0.3em;
+    bottom: -0.05em;
+}
+
+@-webkit-keyframes loader-30 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-30 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* end loder style */
+
+
+.res_search {
+    display: none;
+    position: absolute;
+    width: 45%;
+    right: 80px;
+    top: 16px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+/*style for search result*/
+.search_res {
+    width: 100%;
+    background-color: rgb(235, 242, 243);
+    color: #6e6e6e;
+    max-height: 300px;
+    overflow: auto;
+    position: absolute;
+    z-index: 21;
+    display: none;
+}
+
+.search_res li {
+    padding: 4px 0;
+}
+
+.for_focus:focus .search_res {
+    display: block;
+}
+
+/*for social media icon*/
+.logicon {
+    font-size: 2rem;
+}
+
+.logicon i {
+    padding: 5px !important;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fa-facebook-square:hover {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-google:hover {
+    background: #c52d18;
+    color: white;
+}
+
+.fa-linkedin-in:hover {
+    background: #007bb5;
+    color: white;
+}
+
+@media (max-width: 990px) {
+    .res_search {
+        display: block;
+    }
+
+    .res_s_in {
+        /* display: none; */
+        width: 50px !important;
+    }
+
+
+}
+
+@media (min-width: 990px) {
+    .search_res {
+        width: 91%;
+    }
+}
+
+@media (max-width: 590px) {
+    .res_s_in {
+        display: none;
+
+    }
+
+    .res_s_btn {
+        position: absolute;
+        right: 0;
+        top: 5px;
+    }
+}
+
+@media (min-width: 992px) {
+    .dropdown-menu .dropdown-toggle:after {
+        border-top: .3em solid transparent;
+        border-right: 0;
+        border-bottom: .3em solid transparent;
+        border-left: .3em solid;
+    }
+
+    .dropdown-menu .dropdown-menu {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .dropdown-menu li {
+        position: relative;
+    }
+
+    .nav-item .submenu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: -7px;
+    }
+
+    .nav-item .submenu-left {
+        right: 100%;
+        left: auto;
+    }
+
+    .dropdown-menu>li:hover {
+        background-color: #f1f1f1
+    }
+
+    .dropdown-menu>li:hover>.submenu {
+        display: block;
+    }
+}
+
+/* Style for success */
+.main-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-container {
+    width: 6.25rem;
+    height: 7.5rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.check-container .check-background {
+    width: 100%;
+    height: calc(100% - 1.25rem);
+    background: linear-gradient(to bottom right, #5de593, #41d67c);
+    box-shadow: 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset, 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+    transform: scale(0.84);
+    border-radius: 50%;
+    animation: animateContainer 0.75s ease-out forwards 0.75s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.check-container .check-background svg {
+    width: 65%;
+    transform: translateY(0.25rem);
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: animateCheck 0.35s forwards 1.25s ease-out;
+}
+
+.check-container .check-shadow {
+    bottom: calc(-15% - 5px);
+    left: 0;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, #49da83, transparent);
+    animation: animateShadow 0.75s ease-out forwards 0.75s;
+}
+
+@keyframes animateContainer {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        box-shadow: 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset, 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(0.9);
+        box-shadow: 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset, 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+    }
+
+    43.75% {
+        transform: scale(1.15);
+        box-shadow: 0px 0px 0px 43.334px rgba(255, 255, 255, 0.25) inset, 0px 0px 0px 65px rgba(255, 255, 255, 0.25) inset;
+    }
+
+    62.5% {
+        transform: scale(1);
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset, 0px 0px 0px 21.667px rgba(255, 255, 255, 0.25) inset;
+    }
+
+    81.25% {
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset, 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset;
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset, 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset;
+    }
+}
+
+/*for product img style*/
+.product-img {
+    height: 290px;
+}
+
+/*hide alert*/
+.error_r {
+    display: none;
+}
+
+.error_l {
+    display: none;
+}
+
+
+@keyframes animateCheck {
+    from {
+        stroke-dashoffset: 80;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes animateShadow {
+    0% {
+        opacity: 0;
+        width: 100%;
+        height: 15%;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+
+    43.75% {
+        width: 40%;
+        height: 7%;
+        opacity: 0.35;
+    }
+
+    100% {
+        width: 85%;
+        height: 15%;
+        opacity: 0.25;
+    }
+}
+
+
+/*testing*/
+.dropright:hover .mulitdrop {
+    display: block;
+}
+
+.mulitdrop {
+    display: block;
+}

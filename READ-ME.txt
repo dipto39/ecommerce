@@ -1,0 +1,3 @@
+=> First create a database named "yourshop";
+=> Then import db file from "admin/db/";
+=> admin username = "example@mail.com" password = "1122"

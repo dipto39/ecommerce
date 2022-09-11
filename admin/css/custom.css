@@ -1,0 +1,91 @@
+.pointer {
+    cursor: pointer;
+}
+
+/* table avatar*/
+table img {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.subcata {
+    display: none;
+    background-color: black !important;
+}
+
+.supcata {
+    display: none;
+}
+
+.cata_li {
+    background-color: #50697f;
+
+}
+
+.cata_li a {
+    color: aliceblue;
+}
+
+.cata_li i {
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.subcata li {
+    background-color: rgb(134, 129, 158);
+}
+
+.supcata li {
+    background-color: #8895a1;
+}
+
+.tm-product-img-dummy img {
+    height: 100%;
+    width: 100%;
+}
+
+.cata1 {
+    display: none;
+}
+
+.cata2 {
+    display: none;
+}
+
+.lgoout {
+    cursor: pointer;
+}
+
+.csear {
+    background-color: red;
+}
+
+.csorder {
+    /* font-size: large; */
+    font-size: 20px;
+    padding: 4px;
+    cursor: pointer;
+    /* position: absolute; */
+    right: 0;
+    top: 0;
+
+}
+
+.closeose {
+    display: none;
+}
+
+a {
+    color: white !important;
+}
+
+.asubcata {
+    display: none;
+}
+
+.csorder {
+    display: none;
+}
